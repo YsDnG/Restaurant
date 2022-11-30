@@ -20,7 +20,7 @@ body{
     height: 100vh;
     display: flex;
     flex-direction: column;
-    gap: 5em;
+    gap: 2.5em;
     background-image: url("./Img/pexels-nataliya-vaitkevich-6275189.jpg");
     background-size: cover;
     -o-background-size: cover;
@@ -94,19 +94,20 @@ a{
 
 
 .container{
-    margin: 5em;
+    margin-left: 2.5vmin;
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow:hidden;
-    color: white;
+    color: #d4e5cf; 
     width: 40vw;
     
         
 }
 .container h1{
-    text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em white;
+    
+    text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em #d4e5cf;
     flex: 1 1 auto;
     font-size: 5.9vw;
     flex-wrap: wrap;
@@ -197,7 +198,7 @@ footer{
 @media only screen and (max-width:1000px) {
 
     .Accueil{
-        gap:7em;
+        
         justify-content: center;
         align-items: center;
     
@@ -212,22 +213,10 @@ footer{
     }
 
 
-    a{
-        font-size: 3vw;
-    }
     .container{
-        margin: 1em;
+        
         gap: 1.3em;
         width: 80vw;
-    }
-    .container h1{
-        font-size: 10vw;
-    }
-    .container h2{
-        font-size: 5vw;
-    }
-    .container h3 {
-        font-size: 2.5vw;
     }
     
     footer{
@@ -246,14 +235,13 @@ footer{
     }
 
     .Accueil{
-        gap:5em;
+        
         justify-content: center;
         align-items: center;
     
     }
     #icon{
-        height: 6em;
-        width: 6em;
+       display: none;
         
     }
 
@@ -267,22 +255,123 @@ footer{
     }
 
     a{
-        font-size: 4.5vw;
         flex-wrap: wrap;
         line-height: 1em;
     }
+    
+
+  
+
+}
+
+
+
+
+@media only screen and (max-height:600px)
+{
+    nav{
+        justify-content:space-around;
+        align-items:center;
+        flex-direction: column;
+    }
+
+    header{
+        margin-bottom: 0.5em;
+    }
+
+    .Accueil{
+        justify-content: center;
+        align-items: center;
+        
+    
+    }
+    #icon{
+        display: none;
+        
+    }
+
+    a{
+        flex-wrap: wrap;
+        
+    }
+    button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+       
+        
+    }
+
+    .icon-Img{
+        position: relative;
+    }
+    ul{
+        
+        gap:0.3;
+        position: relative;
+    }
+
+   
+ 
+
+ 
+
+
+
+}
+
+@media only screen and (max-width:400px)
+{
+    
+    nav{
+        display: flex;
+        align-items: center;    
+        position: relative;
+    }
+
+
+
+    .Accueil{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #icon{
+        display: none;
+        
+    }
+
+    a{
+        flex-wrap: wrap;
+        line-height: 1em;
+    }
+    button{
+        height: 2em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+       
+        
+    }
+
+    .icon-Img{
+        position: relative;
+    }
+    ul{
+        margin: 0;
+        flex-wrap: wrap;
+        gap:0.2;
+        position: relative;
+    }
+
+   
     .container{
+        
         gap: 1.3em;
     }
 
-    .container h1{
-        font-size: 12vw;
-    }
-    .container h2{
-        font-size: 6vw;
-    }
-    .container h3 {
-        font-size: 3vw;
-    }
+
+    
 
 }

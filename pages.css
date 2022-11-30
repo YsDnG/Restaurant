@@ -1,0 +1,346 @@
+@font-face {
+    font-family: Anek;
+    src: url("./Font/font1/Anek_Devanagari/AnekDevanagari-VariableFont_wdth\,wght.ttf");
+}
+
+html{
+    margin: 0;
+    padding: 0;
+
+}
+body{
+    font-family: Anek;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    background-image: url("./Img/photo-mise-en-avant-restaurant-libanais-.jpg");
+     background-size: cover;
+    -o-background-size: cover;
+    background-position: center center;
+    background-attachment: fixed; 
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center; 
+    
+}
+h1{
+    color: #d4e5cf; 
+    text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em #d5a653;
+    font-size: 3.9vw;
+    line-height: 1em;
+    margin: 0.3em;
+    
+}
+
+
+header{
+    width: 100vw;
+    height: 20vh;
+    margin-bottom: 3em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+
+nav{
+    margin: 2em 0 0 0;
+    padding: 1em;
+    top: 0;
+    padding-bottom: 2em;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    width: 80vw;
+    height: fit-content;
+    border-bottom: #FFFFFF;
+    height: 20vh;
+}
+
+#icon{
+    height: fit-content;
+    width: 12em;
+    border-radius: 50%;
+ 
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+.icon-Img
+{
+    flex: 1 1 80%;
+    left: 1em;
+    padding-right: 3em;
+}
+ul{
+    flex: 2 1 80%;
+    margin-top: 5em;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:1em;
+}
+li{
+    list-style-type:none;
+}
+a{
+    font-size: 1.5em;
+    text-decoration: none;
+    font-weight: 700;
+    color: #d4e5cf; 
+    text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em #d5a653;
+}
+
+.content-about{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    bottom: 1em;
+    display: flex;
+    width: 80%;
+    background-image: linear-gradient(-180deg, #FF7E31, #E62C03);
+    border-radius: 3%;
+    opacity: 0.90;
+}
+
+.container-about
+{
+    
+    border-top: solid;
+    border-color: #d4e5cf; 
+    display: flex;
+    gap: 1em;
+    padding: 1.5em;
+}
+
+.container-about p{
+    font-size: 1.5vw;
+    flex: 2 1 auto;
+    color: #d4e5cf; 
+    text-shadow: 3px 3px 6px black, 0 0 1em black, 0 0 0.2em #d4e5cf; ;
+}
+.ImgAbout
+{
+    flex: 1 1 50%;
+}
+
+a:hover{
+    text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em white;
+
+}
+
+/* Menu css */
+
+.menuContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.choice{
+    background-color: initial;
+  background-image: linear-gradient(-180deg, #FF7E31, #E62C03);
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
+  height: 2.5em;
+  line-height: 2.5em;
+  outline: 0;
+  overflow: hidden;
+  padding: 0 1.75em;
+  pointer-events: auto;
+  position: relative;
+  text-align: center;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+  width: auto;
+  z-index: 9;
+  border: 0;
+  transition: box-shadow .2s;
+  font-size: 1.2vw;
+}
+
+.menu-choice{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem
+}
+.menuPizza-Container
+{
+    margin-bottom: 2em;
+    opacity: 0.85;
+    border-radius: 2%;
+    background-image:linear-gradient(-180deg, #FF7E31, #E62C03);
+    text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em #262b24;
+    color: rgb(242, 241, 248);
+    font-size: 3vw;
+    display: grid;
+    height: 50vh;
+    width: 80vw;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr;
+    grid-template-areas: 
+    "pizza1 pizza1Ing"
+    "pizza2 pizza2Ing"
+    "pizza3 pizza3Ing"
+    "pizza4 pizza4Ing"
+    "pizza5 pizza5Ing"
+    "pizza6 pizza6Ing"
+    ;
+    grid-gap: 0.2rem 1rem;
+    
+}
+
+.menuFelafel-Container
+{
+     margin-bottom: 2em;
+    opacity: 0.85;
+    border-radius: 2%;
+    background-image:linear-gradient(-180deg, #FF7E31, #E62C03);
+    text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em #262b24;
+    color: rgb(242, 241, 248);
+    font-size: 3vw;
+    display: grid;
+    height: 50vh;
+    width: 80vw;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr ;
+    grid-template-areas: 
+
+    "felafel1 felafel1Ing"
+
+    "Lahmacum LahmacumIng"
+  
+    ;
+    grid-gap: 0.2rem 1rem;
+
+}
+
+
+#felafel1,#Lahmacum{
+    margin-left: 1em;
+    align-self: center;
+    font-size: 1.5vw;
+}
+#LahmacumIng, #felafel1Ing
+{
+    justify-self: center;
+    align-self: center;
+    font-size: 1.5vw;
+}
+
+#felafel1
+{
+    grid-area:felafel1;
+}
+#felafel1Ing{
+    grid-area: felafel1Ing;
+}
+
+#LahmacumIng
+{
+    grid-area: LahmacumIng;
+}
+#Lahmacum{
+    grid-area: Lahmacum;
+}
+
+    
+#pizza1Ing, #pizza2Ing, #pizza3Ing, #pizza4Ing, #pizza5Ing, #pizza6Ing
+{
+    justify-self: center;
+    align-self: center;
+    font-size: 1.5vw;
+}
+#pizza1, #pizza2, #pizza3, #pizza4, #pizza5,#pizza6
+{
+    font-size: 2vw;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+}
+#pizza1{
+    
+    grid-area: pizza1;
+}
+#pizza2{
+    
+    grid-area: pizza2;
+}
+#pizza3{
+    
+    grid-area: pizza3;
+   
+    
+}
+#pizza4{
+    
+    grid-area: pizza4;  
+}
+#pizza5{
+    
+    grid-area: pizza5;
+}
+
+
+
+
+
+@media only screen and (max-width:850px) {
+
+    header{
+        position: relative;
+    }
+    .content-about{
+        position: relative;
+    }
+
+    .container-about{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+       
+    }
+    .choice{
+        height: 3vw;
+        
+    }
+
+    .container-about p{
+        font-size: 2vw;
+    }
+
+    Img
+    {
+        max-width: 50% ;
+    }
+
+    .icon-Img{
+        flex: 1 0 auto;
+        
+    }
+
+
+    ul{
+        
+        margin-top: 2.5em;
+    }
+
+
+    a{
+        font-size: 3vw;
+    }
+  
+}
+
