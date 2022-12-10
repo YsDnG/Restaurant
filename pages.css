@@ -181,11 +181,12 @@ a:hover{
     border-radius: 2%;
     background-image:linear-gradient(-180deg, black, black);
     background-color: white;
-    text-shadow: 0 0 5px #FFF, 0 0 5px #FFF, 0 0 15px #FFF, 0 0 10px red, 0 0 150px red, 0 0 40px red, 0 0 22.5px red, 0 0 32px red;
+    color:#6B0F9C ;
     color: rgb(242, 241, 248);
     font-size: 2vw;
     display: grid;
     height: 90%;
+    
     
     grid-template-columns: 1fr 3fr 0.5fr;
     grid-template-rows: 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr;
@@ -206,7 +207,7 @@ a:hover{
     opacity: 0.85;
     border-radius: 2%;
     background-image:linear-gradient(-180deg, black, black);
-    text-shadow: 0 0 5px #FFF, 0 0 5px #FFF, 0 0 15px #FFF, 0 0 10px red, 0 0 150px red, 0 0 40px red, 0 0 22.5px red, 0 0 32px red;
+    
     color: rgb(242, 241, 248);
     font-size: 3vw;
     display: grid;
@@ -217,9 +218,8 @@ a:hover{
     grid-template-rows: 0.25fr 0.25fr ;
     grid-template-areas: 
 
-    "felafel1 felafel1Ing"
-
-    "Lahmacum LahmacumIng"
+    "felafel1 felafel1Ing felafelPrix"
+    "Lahmacum LahmacumIng lahmacunPrix"
   
     ;
     grid-gap: 0.2rem 1rem;
@@ -227,33 +227,26 @@ a:hover{
 }
 
 
-#felafel1,#Lahmacum{
-    margin-left: 1em;
+#felafel1,#Lahmacum,#felafelPrix,#lahmacunPrix{
+    
     align-self: center;
     font-size: 1.5vw;
 }
 #LahmacumIng, #felafel1Ing
 {
+    border-top: 1px solid white;
     justify-self: center;
     align-self: center;
     font-size: 1.5vw;
 }
 
-#felafel1
-{
-    grid-area:felafel1;
-}
-#felafel1Ing{
-    grid-area: felafel1Ing;
-}
+#felafel1{grid-area:felafel1;}
+#felafel1Ing{grid-area: felafel1Ing;}
+#felafelPrix{grid-area: felafelPrix;}
 
-#LahmacumIng
-{
-    grid-area: LahmacumIng;
-}
-#Lahmacum{
-    grid-area: Lahmacum;
-}
+#LahmacumIng{grid-area: LahmacumIng;}
+#Lahmacum{grid-area: Lahmacum;}
+#lahmacunPrix{grid-area: lahmacunPrix;}
 
 
     
@@ -309,7 +302,10 @@ a:hover{
     overflow: hidden;
     display: flex;
   }
+  .panel p:hover{
+    text-shadow: 0 0 5px #FFF, 0 0 5px #FFF, 0 0 15px #FFF, 0 0 10px rgb(25, 31, 117), 0 0 150px rgb(25, 31, 117), 0 0 40px rgb(43, 117, 25), 0 0 22.5px rgb(25, 31, 117), 0 0 32px rgb(109, 25, 117);
 
+}
   .panel {
     margin-bottom: 0.5em;
     background: #6B0F9C;
@@ -336,14 +332,12 @@ a:hover{
   .panel1 { background-image:url('./Img/Pizza-pie-tomatoes-oil_2560x1600.jpg'); }
   .panel2 { background-image:url('./Img/pexels-nataliya-vaitkevich-6275183.jpg'); }
   .panel3 { background-image:url('./Img/617baf742ddba_meilleures-idees-cocktails-maison.webp');}
-  .panel4 { background-image:url(https://source.unsplash.com/ITjiVXcwVng/1500x1500); }
-  .panel5 { background-image:url(https://source.unsplash.com/3MNzGlQM7qs/1500x1500); }
 
   /* Flex Children */
   .panel > * {
     margin: 0;
     width: 100%;
-    transition: transform 0.5s;
+    transition: transform 0.3s;
     flex: 1 0 auto;
     display: flex;
     align-items: center;
@@ -352,15 +346,15 @@ a:hover{
   .panel> *:first-child {transform: translateY(0);}
   .panel.open-active > *:first-child{transform: translateY(-100%);}
 
-  .panel> *:last-child {transform: translateY(100%);}
-  .panel.open-active > *:last-child{transform: translateY(0);}
-
-
+  .panel> *:nth-child(2) {transform: translateY(-100%);}
+  .panel.open-active > *:nth-child(2){transform: translateY(0);}
 
   .panel p {
     text-transform: uppercase;
     font-family: 'Amatic SC', cursive;
-    text-shadow: 0 0 5px #FFF, 0 0 5px #FFF, 0 0 15px #FFF, 0 0 10px red, 0 0 150px red, 0 0 40px red, 0 0 22.5px red, 0 0 32px red;
+    
+    text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em white;
+    
     font-size: 2vw;
     
   }
@@ -372,7 +366,6 @@ a:hover{
   .panel.open {
     flex:6;
     font-size: 2vw;
-    
   }
 
 
