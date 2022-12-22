@@ -5,7 +5,7 @@
 
 gridMenus.forEach(g=> g.style.display="none")
 
- 
+
 
 
 function afficherMenu(e)
@@ -52,6 +52,8 @@ function toggleOpen(e)
 function toggleActive(e)
 {
     if(this.classList.contains('open')){
+
+        this.classList.add('open-active')
    
             if( this.classList.contains('panel1'))       
                 menuPizza.style.display="grid" 
@@ -59,9 +61,10 @@ function toggleActive(e)
             if( this.classList.contains('panel2'))
                 menuFelafel.style.display="grid" 
                  
-        
+                
     }
     else{
+        this.classList.remove('open-active')
 
         if( this.classList.contains('panel1'))
         menuPizza.style.display="none" 
@@ -71,13 +74,6 @@ function toggleActive(e)
         menuFelafel.style.display="none" 
     }
   
-    if(e.propertyName.includes('flex-grow')) 
-    {
-        console.log(e.propertyName)
-        this.classList.toggle('open-active')
-    }
-
-    
 }
 
 
