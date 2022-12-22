@@ -2,9 +2,9 @@ const aboutLink = document.getElementById('aboutLink')
 
 
 
-if (window.innerWidth < 425)
+if (window.innerWidth < 500)
 {
-        aboutLink.innerHTML ='À     Propos'
+        aboutLink.innerHTML ='À Propos'
 }
 else
 {
