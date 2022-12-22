@@ -52,11 +52,18 @@ function afficherMenu(e)
 
 function toggleOpen(e)
 {
+    
+    this.classList.toggle('open') 
     if(window.innerWidth < 500)
     {
-        panel.forEach(p => p.classList.remove('open'))
-    }
-    this.classList.toggle('open')   
+        panel.forEach((p) => {
+           if(p != this)
+            if(p.classList.contains('open'))
+                p.classList.remove('open')
+         
+           
+        });
+    }  
 }
 
 function toggleActive(e)

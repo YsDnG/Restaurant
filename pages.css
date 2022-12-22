@@ -340,7 +340,7 @@ a:hover{
 
   /* Flex Children */
   .panel > * {
-    margin: 0;
+    margin: 0 1em 0 1em;
     width: 100%;
     transition: transform 0.3s;
     flex: 1 0 auto;
@@ -476,6 +476,8 @@ a:hover{
     .panel{
         padding: 0.5em;
     }
+    
+
 
   .panel.open {
     flex:8;
