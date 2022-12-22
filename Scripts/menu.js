@@ -2,6 +2,7 @@
  const menuFelafel = document.querySelector('.menuFelafel');
  const gridMenus = document.querySelectorAll('.menuContainer');
  const panel= document.querySelectorAll('.panel')
+ const aboutLink = document.getElementById('aboutLink')
 
 gridMenus.forEach(g=> g.style.display="none")
 
