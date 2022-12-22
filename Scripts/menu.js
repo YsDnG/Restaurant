@@ -5,7 +5,14 @@
 
 gridMenus.forEach(g=> g.style.display="none")
 
-
+if (window.innerWidth < 500)
+{
+        aboutLink.innerHTML ='À Propos'
+}
+else
+{
+    aboutLink.innerHTML ='Qui sommes nous'
+}
 
 
 function afficherMenu(e)
@@ -45,7 +52,10 @@ function afficherMenu(e)
 
 function toggleOpen(e)
 {
-    
+    if(window.innerWidth < 500)
+    {
+        panel.forEach(p => p.classList.remove('open'))
+    }
     this.classList.toggle('open')   
 }
 
@@ -54,6 +64,7 @@ function toggleActive(e)
     if(this.classList.contains('open')){
 
         this.classList.add('open-active')
+     
    
             if( this.classList.contains('panel1'))       
                 menuPizza.style.display="grid" 

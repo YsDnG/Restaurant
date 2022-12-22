@@ -338,3 +338,23 @@ footer{
     
 
 }
+
+@media only screen and (max-width:350px)
+{
+    #icon{
+        height:55%;
+        width: 55%;        
+    }
+    nav{
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    a{
+        font-size:4.5vw
+    }
+    .container{
+        margin-bottom: 1.5em;
+    }
+    
+ 
+}

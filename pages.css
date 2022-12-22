@@ -216,6 +216,7 @@ a:hover{
     display: grid;
     height: 90%;
     align-content:space-around;
+    overflow-x: auto;
 
 
     grid-template-columns: 1fr 3fr;
@@ -421,5 +422,64 @@ a:hover{
         font-size: 3vw;
     }
   
+}
+
+@media only screen and (max-width:350px)
+{
+    .icon-Img{
+      padding-right: 0;
+    }
+    nav{
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    a{
+        font-size:4.5vw
+    }
+    .container{
+        margin-bottom: 1.5em;
+    }
+    #pizza1Ing, #pizza2Ing, #pizza3Ing, #pizza4Ing, #pizza5Ing, #pizza6Ing{
+       
+        font-size: 2.5vw;
+    }
+    #pizza1, #pizza2, #pizza3, #pizza4, #pizza5,#pizza6{
+        
+        font-size: 3.5vw;
+        ;
+    }
+    #prixPizza1, #prixPizza2,#prixPizza3, #prixPizza4, #prixPizza5,#prixPizza6{
+      
+        font-size: 2.3vw;
+        
+    }
+
+    #felafel1,#Lahmacum,#felafelPrix,#lahmacunPrix{
+    
+        overflow-x: auto;
+        font-size: 3vw;
+    }
+    #LahmacumIng, #felafel1Ing
+    {
+    
+        font-size: 2.5vw;
+    }
+
+    .panels
+    {
+        width: 100vw;
+    }
+    .panel p{
+        
+        font-size: 3.5vw;
+    }
+    .panel{
+        padding: 0.5em;
+    }
+
+  .panel.open {
+    flex:8;
+  }
+ 
 }
 
