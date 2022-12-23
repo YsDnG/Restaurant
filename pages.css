@@ -23,8 +23,11 @@ body{
     justify-content: space-evenly;
     flex-direction: column;
     align-items: center; 
-    
 }
+*, *:before, *:after {
+    box-sizing: inherit;
+  }
+
 h1{
     color: #d4e5cf; 
     text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em #d5a653;
@@ -59,23 +62,6 @@ nav{
     border-bottom: #FFFFFF;
     height: 20vh;
 }
-
-#icon{
-    height: fit-content;
-    width: 12em;
-    border-radius: 50%;
- 
-}
-img{
-    max-width: 100%;
-    height: auto;
-}
-.icon-Img
-{
-    flex: 1 1 80%;
-    left: 1em;
-    padding-right: 3em;
-}
 ul{
     flex: 2 1 80%;
     margin-top: 5em;
@@ -93,6 +79,62 @@ a{
     color: #d4e5cf; 
     text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em #d5a653;
 }
+a:hover{
+    text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em white;
+
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+button {
+    background-color: initial;
+    background-image: linear-gradient(-180deg, #FF7E31, #E62C03);
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Inter,-apple-system,system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
+    height: 3.5em;
+    line-height: 3.5em;
+    outline: 0;
+    overflow: hidden;
+    padding: 0 1.75em;
+    pointer-events: auto;
+    position: relative;
+    text-align: center;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: top;
+    white-space: nowrap;
+    width: auto;
+    z-index: 9;
+    border: 0;
+    transition: box-shadow .2s;
+  }
+
+  iframe{
+    width: 100%;
+    height: 100%;
+}
+
+#icon{
+    height: fit-content;
+    width: 12em;
+    border-radius: 50%;
+ 
+}
+
+.icon-Img
+{
+    flex: 1 1 80%;
+    left: 1em;
+    padding-right: 3em;
+}
+
 
 .content-about{
     display: flex;
@@ -128,10 +170,7 @@ a{
     flex: 1 1 50%;
 }
 
-a:hover{
-    text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em white;
 
-}
 
 /* Menu css */
 
@@ -297,9 +336,7 @@ a:hover{
 #pizza5Ing{grid-area: pizza5Ing;}
 #pizza6Ing{grid-area: pizza6Ing;}
 
-*, *:before, *:after {
-    box-sizing: inherit;
-  }
+
 
   .panels {
     height: 80vh;
@@ -334,7 +371,10 @@ a:hover{
     background-position: center center;
   }
 
-  .panel1 { background-image:url('./Img/Pizza-pie-tomatoes-oil_2560x1600.jpg'); }
+  .panel1 { 
+    background-image:url('./Img/Pizza-pie-tomatoes-oil_2560x1600.jpg');
+   
+}
   .panel2 { background-image:url('./Img/pexels-nataliya-vaitkevich-6275183.jpg'); }
   .panel3 { background-image:url('./Img/617baf742ddba_meilleures-idees-cocktails-maison.webp');}
 
@@ -357,11 +397,8 @@ a:hover{
   .panel p {
     text-transform: uppercase;
     font-family: 'Amatic SC', cursive;
-    
     text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em white;
-    
     font-size: 2vw;
-    
   }
   
   .panel p:nth-child(2) {
@@ -371,13 +408,32 @@ a:hover{
   .panel.open {
     flex:6;
     font-size: 2vw;
+    
+
+  }
+
+  .buttonPizza
+  {
+    height: 100%;
+    flex: 1;
+    opacity: 0.90;
+    font-family: 'Amatic SC', cursive;
+    font-size: 2vw;
+    background-image: none;
+    text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em white;
+    
+  }
+  .conteneurButtonPizza{
+    display: flex;
+    gap :0.5em;
+    padding: 0 1em 0 1em;
+    position: relative;
   }
 
   /**** Contact page ***/ 
   .container-contact{
     display: flex;
     flex-direction: column;
-    
     justify-content: center;
     align-items: center;
     bottom: 1em;
@@ -428,10 +484,7 @@ a:hover{
     padding: 1em;
     flex: 2 1 auto;
 }
-iframe{
-    width: 100%;
-    height: 100%;
-}
+
 
 
 

@@ -3,6 +3,8 @@
  const gridMenus = document.querySelectorAll('.menuContainer');
  const panel= document.querySelectorAll('.panel')
  const aboutLink = document.getElementById('aboutLink')
+let btnCrème = null
+let btnTomate = null
 
 gridMenus.forEach(g=> g.style.display="none")
 
@@ -16,45 +18,11 @@ else
 }
 
 
-function afficherMenu(e)
-{
-    // menuPizza.style.display="none"
-    // menuFelafel.style.display="none"
-    // clientMenuChoice = this.innerText.toLowerCase();
-    // choiceMenu.style.display="flex";
-    // choiceMenu.style.flexDirection ="column";
-    // choiceMenu.style.position="fixed";
-    // choiceMenu.style.left = "1em";
-    // if( clientMenuChoice === "felafel")
-    // {
-    //     document.body.style.backgroundImage ='url("../Img/pexels-nataliya-vaitkevich-6275189.jpg")'
-    //     menuPizza.style.display="none"
-    //     menuFelafel.style.display="grid"
-    //     titre.innerHTML ="Nos Felafel <3"
-        
-    // }
-    // else
-    // {
-    //     document.body.style.backgroundImage ='url("../Img/Pizza-pie-tomatoes-oil_2560x1600.jpg")'
-    //     menuPizza.style.display="grid"
-    //     menuFelafel.style.display="none"
-    //     titre.innerHTML ="Nos Pizza <3"
-    
-    //}
-    
-    
-}
-
-
-
-
-
-
-
 function toggleOpen(e)
 {
     
     this.classList.toggle('open') 
+    
     if(window.innerWidth < 500)
     {
         panel.forEach((p) => {
@@ -64,35 +32,109 @@ function toggleOpen(e)
          
            
         });
-    }  
+    }
+    
+      
 }
 
 function toggleActive(e)
 {
-    if(this.classList.contains('open')){
-
+    if(this.classList.contains('open'))
+    {
         this.classList.add('open-active')
-     
-   
-            if( this.classList.contains('panel1'))       
-                menuPizza.style.display="grid" 
+        
+            if(this.classList.contains('panel1')) 
+            {      
+                 this.children[0].style.display='none'
+                 if(btnCrème === null)
+                     createButton(this);
+                     
+                this.removeEventListener('click',toggleOpen)
+            
+                
+            }
                 
             if( this.classList.contains('panel2'))
-                menuFelafel.style.display="grid" 
+            {
+                this.children[0].style.display='none'
+                menuFelafel.style.display="grid"
+            } 
                  
                 
     }
-    else{
+    else
+    {
         this.classList.remove('open-active')
 
         if( this.classList.contains('panel1'))
-        menuPizza.style.display="none" 
-  
+        {
+            this.children[0].style.display='contents'
+            menuPizza.style.display="none" 
+           
+        }
 
         if( this.classList.contains('panel2'))
-        menuFelafel.style.display="none" 
+        {
+            this.children[0].style.display='contents'
+            menuFelafel.style.display="none" 
+        }
+    }  
+    
+}
+
+
+function afficherMenu(e)
+{
+    
+    if(this.innerHTML ==='Base Crème')
+    {
+        deleteButton()
+        menuPizza.style.display="grid" 
+        setTimeout(()=>
+        {
+        panel[0].addEventListener('click',toggleOpen)
+        },500 )
     }
-  
+    if(this.innerHTML === 'Base Tomate')
+        {
+            deleteButton()
+            menuPizza.style.display="grid" 
+            setTimeout(()=>
+            {
+            panel[0].addEventListener('click',toggleOpen)
+            },500 )
+        }
+
+   
+}
+
+function createButton(panelclicked)
+{
+    const divButton = document.createElement('div')
+
+    btnCrème = document.createElement('button');
+    btnTomate = document.createElement('button');
+
+    btnCrème.innerHTML='Base Crème'
+    btnTomate.innerHTML='Base Tomate'
+
+    btnCrème.classList.add('buttonPizza')
+    btnTomate.classList.add('buttonPizza')
+    divButton.classList.add('conteneurButtonPizza')
+
+
+    btnCrème.addEventListener('click',afficherMenu)
+    btnTomate.addEventListener('click',afficherMenu)
+    panelclicked.appendChild(divButton)
+    divButton.appendChild(btnTomate)
+    divButton.appendChild(btnCrème)
+}
+
+function deleteButton()
+{
+    panel[0].removeChild(panel[0].children[2])
+    btnCrème = null
+    btnTomate =null
 }
 
 
