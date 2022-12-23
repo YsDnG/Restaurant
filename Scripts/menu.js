@@ -25,7 +25,7 @@ function toggleOpen(e)
     
     if(window.innerWidth < 500)
     {
-        if(this !== panel[0] && panel[0].classList.contains('open'))
+        if(this !== panel[0] && panel[0].children[1].display ==='grid')
         {
             deleteButton()
             setTimeout(()=>
@@ -52,14 +52,18 @@ function toggleActive(e)
     if(this.classList.contains('open'))
     {
         this.classList.add('open-active')
+
+        
         
             if(this.classList.contains('panel1')) 
-            {      
+            {    
+               
                  this.children[0].style.display='none'
                  if(btnCrème === null)
                      createButton(this);
                      
                 this.removeEventListener('click',toggleOpen)
+
             
                 
             }
@@ -99,6 +103,7 @@ function afficherMenu(e)
     if(this.innerHTML ==='Base Crème')
     {
         deleteButton()
+       
         menuPizza.style.display="grid" 
         setTimeout(()=>
         {
