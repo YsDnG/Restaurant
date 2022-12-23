@@ -25,13 +25,14 @@ function toggleOpen(e)
     
     if(window.innerWidth < 500)
     {
-        if(this !== panel[0] && panel[0].children[1].display ==='grid')
+        if(this !== panel[0] && panel[0].children[2] !== undefined)
         {
             deleteButton()
             setTimeout(()=>
             {
             panel[0].addEventListener('click',toggleOpen)
-            },200 )
+            },500 )
+           
             
         }
 
