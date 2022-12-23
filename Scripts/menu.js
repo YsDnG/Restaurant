@@ -25,6 +25,16 @@ function toggleOpen(e)
     
     if(window.innerWidth < 500)
     {
+        if(this !== panel[0] && panel[0].classList.contains('open'))
+        {
+            deleteButton()
+            setTimeout(()=>
+            {
+            panel[0].addEventListener('click',toggleOpen)
+            },200 )
+            
+        }
+
         panel.forEach((p) => {
            if(p != this)
             if(p.classList.contains('open'))
