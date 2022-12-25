@@ -76,7 +76,7 @@ a{
     font-size: 1.5em;
     text-decoration: none;
     font-weight: 700;
-    color: #d4e5cf; 
+    color: #e4e49c;; 
     text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em #d5a653;
 }
 a:hover{
@@ -491,7 +491,7 @@ button {
 
 
 
-@media only screen and (max-width:850px) {
+@media only screen and (max-width:1050px) {
 
     header{
         position: relative;
@@ -538,7 +538,7 @@ button {
   
 }
 
-@media only screen and (max-width:350px)
+@media only screen and (max-width:800px)
 {
     .icon-Img{
       padding-right: 0;
@@ -546,6 +546,33 @@ button {
     nav{
         flex-direction: column;
         justify-content: space-around;
+        width: auto;
+        margin-bottom: 2.5em;
+    }
+    a{
+        font-size:3.5vw;
+        
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+   
+ 
+}
+
+@media only screen and (max-width:500px)
+{
+    .icon-Img{
+      padding-right: 0;
+      margin-top:3em;
+      margin-bottom: 0;
+    }
+    nav{
+        flex-direction: column;
+        width: auto;
+        gap: 0;
     }
     a{
         font-size:4.5vw
@@ -593,12 +620,7 @@ button {
     .buttonPizza{
         font-size: 2.8vw;
     }
-    
-
-
-  .panel.open {
-    flex:8;
-  }
  
 }
+
 
