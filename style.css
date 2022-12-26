@@ -160,7 +160,7 @@ button {
   cursor: pointer;
   display: inline-block;
   font-family: Inter,-apple-system,system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
-  height: 3.5em;
+  height: 4.5em;
   line-height: 3.5em;
   outline: 0;
   overflow: hidden;
@@ -380,13 +380,4 @@ footer{
  
 }
 
-@media only screen and (min-height:1000px){
-    header{
-        margin-bottom: 15em;
-    }
-    .container{
-        gap: 5em;
-        width: 80vw;
-    }
 
-}
