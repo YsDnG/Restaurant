@@ -258,7 +258,7 @@ button {
     overflow-x: auto;
 
 
-    grid-template-columns: 4fr 3fr;
+    grid-template-columns: 2fr 3fr;
     grid-template-rows: 0.25fr 0.40fr ;
     grid-template-areas: 
 
