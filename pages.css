@@ -630,6 +630,10 @@ button {
     .buttonPizza{
         font-size: 2.8vw;
     }
+
+   .contact h3 a{
+        font-size: 1.8vmin;
+    }
  
 }
 
