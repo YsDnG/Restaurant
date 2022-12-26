@@ -258,8 +258,8 @@ button {
     overflow-x: auto;
 
 
-    grid-template-columns: 2fr 3fr;
-    grid-template-rows: 0.25fr 0.25fr ;
+    grid-template-columns: 4fr 3fr;
+    grid-template-rows: 0.25fr 0.40fr ;
     grid-template-areas: 
 
     "felafel1 felafel1Ing felafelPrix"
@@ -601,11 +601,12 @@ button {
         
     }
 
-    #felafel1,#Lahmacum,#felafelPrix,#lahmacunPrix{
+    #felafel1, #Lahmacum,#felafelPrix,#lahmacunPrix{
     
         overflow-x: auto;
-        font-size: 3vw;
+        font-size: 2.8vw;
     }
+  
     #LahmacumIng, #felafel1Ing
     {
     
