@@ -22,7 +22,7 @@ function toggleOpen(e)
 {
     
     this.classList.toggle('open') 
-    
+     
     if(window.innerWidth < 500)
     {
         if(this !== panel[0] && panel[0].children[2] !== undefined)
@@ -35,14 +35,24 @@ function toggleOpen(e)
            
             
         }
+        if(!this.classList.contains('open'))
+        panel.forEach((p) => {
+            if(p != this)
+                p.classList.remove('close')
+        }); 
 
         panel.forEach((p) => {
            if(p != this)
             if(p.classList.contains('open'))
+            {
                 p.classList.remove('open')
-         
-           
+            }
+            if(this!= p && this.classList.contains('open'))
+                p.classList.add('close')
         });
+      
+
+        
     }
     
       
@@ -59,6 +69,7 @@ function toggleActive(e)
             if(this.classList.contains('panel1')) 
             {    
                
+                
                  this.children[0].style.display='none'
                  if(btnCrème === null)
                      createButton(this);

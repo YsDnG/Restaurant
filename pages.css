@@ -147,6 +147,10 @@ button {
     background-image: linear-gradient(-180deg, #FF7E31, #E62C03);
     border-radius: 3%;
     opacity: 0.90;
+    margin-top: 2em;
+}
+.close{
+    display: none !important;
 }
 
 .container-about
@@ -406,7 +410,7 @@ button {
   }
 
   .panel.open {
-    flex:6;
+    flex:5 0 85%;
     font-size: 2vw;
     
 
@@ -443,6 +447,7 @@ button {
     border-radius: 3%;
     opacity: 0.95;   
     background-image: linear-gradient(-180deg, #FF7E31, #E62C03);
+    
 }
 .content{
     display: flex;
@@ -496,9 +501,7 @@ button {
     header{
         position: relative;
     }
-    .content-about{
-        position: relative;
-    }
+   
 
     .container-about{
         flex-direction: column;
@@ -586,6 +589,10 @@ button {
     .container{
         margin-bottom: 1.5em;
     }
+    .container-about
+    {
+        margin-bottom: 1.5em;
+    }
     #pizza1Ing, #pizza2Ing, #pizza3Ing, #pizza4Ing, #pizza5Ing, #pizza6Ing{
        
         font-size: 2.5vw;
@@ -620,20 +627,24 @@ button {
     .panels
     {
         width: 100vw;
+        height: 70vh;
+        
     }
     .panel p{
         
         font-size: 3.5vw;
     }
-    .panel{
-        padding: 0.5em;
-    }
+    
     .buttonPizza{
         font-size: 2.8vw;
     }
 
    .contact h3 a{
         font-size: 1.8vmin;
+    }
+    .container-contact
+    {
+        margin-top: 2em;
     }
  
 }

@@ -366,8 +366,14 @@ footer{
         flex-direction: column;
         justify-content: space-around;
     }
-    a{
+    nav a{
         font-size:4.5vw
+    }
+    a{
+        font-size: 4.5vw;
+    }
+    button{
+        height: auto;
     }
     .container{
         margin-bottom: 1.5em;
