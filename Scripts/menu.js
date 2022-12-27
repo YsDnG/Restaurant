@@ -1,5 +1,6 @@
  const menuPizza = document.querySelector('.menuPizza');
  const menuFelafel = document.querySelector('.menuFelafel');
+ const menuCocktail = document.querySelector('.menuCocktail')
  const gridMenus = document.querySelectorAll('.menuContainer');
  const panel= document.querySelectorAll('.panel')
  const aboutLink = document.getElementById('aboutLink')
@@ -20,9 +21,9 @@ else
 
 function toggleOpen(e)
 {
-    
+   
     this.classList.toggle('open') 
-     
+
     if(window.innerWidth < 500)
     {
         if(this !== panel[0] && panel[0].children[2] !== undefined)
@@ -85,6 +86,12 @@ function toggleActive(e)
                 this.children[0].style.display='none'
                 menuFelafel.style.display="grid"
             } 
+
+            if( this.classList.contains('panel3'))
+            {
+                this.children[0].style.display='none'
+                menuCocktail.style.display="grid"
+            } 
                  
                 
     }
@@ -103,6 +110,12 @@ function toggleActive(e)
         {
             this.children[0].style.display='contents'
             menuFelafel.style.display="none" 
+        }
+
+        if( this.classList.contains('panel3'))
+        {
+            this.children[0].style.display='contents'
+            menuCocktail.style.display="none" 
         }
     }  
     

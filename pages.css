@@ -2,6 +2,10 @@
     font-family: Anek;
     src: url("./Font/font1/Anek_Devanagari/AnekDevanagari-VariableFont_wdth\,wght.ttf");
 }
+@font-face {
+    font-family: Playfair;
+    src: url("./Font/font2/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf");
+}
 
 html{
     margin: 0;
@@ -247,6 +251,35 @@ button {
     margin-top: 0;
     
 }
+.menuCocktail
+{
+    opacity: 0.85;
+    border-radius: 2%;
+    
+    background-image:linear-gradient(-180deg, black, black);
+    background-color: white;
+    color:#6B0F9C ;
+    color: rgb(242, 241, 248);
+    font-size: 2vw;
+    display: grid;
+    height: 95%;
+    overflow-y: auto;
+    
+    
+    grid-template-columns: 1fr 3fr 0.5fr;
+    grid-template-rows: 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr;
+    grid-template-areas: 
+    "cocktail1 cocktailIng1 cocktail1Prix"
+    "cocktail2 cocktailIng2 cocktail2Prix"
+    "cocktail3 cocktailIng3 cocktail3Prix"
+    "cocktail4 cocktailIng4 cocktail4Prix"
+    "cocktail5 cocktailIng5 cocktail5Prix"
+  
+    ;
+    grid-gap: 0.2rem 1rem;
+    margin-top: 0;
+    
+}
 
 .menuFelafel
 {
@@ -296,8 +329,6 @@ button {
 #Lahmacum{grid-area: Lahmacum;}
 #lahmacunPrix{grid-area: lahmacunPrix;}
 
-
-    
 #pizza1Ing, #pizza2Ing, #pizza3Ing, #pizza4Ing, #pizza5Ing, #pizza6Ing{
     border-top: 1px solid white;
     justify-self: center;
@@ -318,6 +349,48 @@ button {
     align-self: center;
     text-align: center;
 }
+
+#cocktail1, #cocktail2, #cocktail3, #cocktail4, #cocktail5{
+    
+    font-size: 1.5vw;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+}
+#cocktailIng1, #cocktailIng2, #cocktailIng3, #cocktailIng4, #cocktailIng5{
+    
+    border-top: 1px solid white;
+    justify-self: center;
+    align-self: center;
+    font-size: 1.3vw;
+}
+
+#cocktail1Prix,#cocktail2Prix,#cocktail3Prix,#cocktail4Prix,#cocktail5Prix
+{
+    font-size: 1.3vw;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+}
+
+#cocktail1{grid-area: cocktail1;}
+#cocktail2{grid-area: cocktail2;}
+#cocktail3{grid-area: cocktail3;}
+#cocktail4{grid-area: cocktail4;}
+#cocktail5{grid-area: cocktail5;}
+
+#cocktailIng1{grid-area: cocktailIng1;}
+#cocktailIng2{grid-area: cocktailIng2;}
+#cocktailIng3{grid-area: cocktailIng3;}
+#cocktailIng4{grid-area: cocktailIng4;}
+#cocktailIng5{grid-area: cocktailIng5;}
+
+#cocktail1Prix{grid-area: cocktail1Prix;}
+#cocktail2Prix{grid-area: cocktail2Prix;}
+#cocktail3Prix{grid-area: cocktail3Prix;}
+#cocktail4Prix{grid-area: cocktail4Prix;}
+#cocktail5Prix{grid-area: cocktail5Prix;}
+
 
 #prixPizza1{ grid-area: prixPizza1;}
 #prixPizza2{grid-area: prixPizza2;}
@@ -365,11 +438,9 @@ button {
     align-items: center;
     display: flex;
     flex-direction: column;
-    /* Safari transitionend event.propertyName === flex */
-    /* Chrome + FF transitionend event.propertyName === flex-grow */
     transition:
-      flex 0.5s cubic-bezier(0.61,-0.19, 0.7,-0.11),
-      background 0.5s;
+    flex 0.5s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+    background 0.5s;
     font-size: 2vw;
     background-size: cover;
     background-position: center center;
@@ -400,7 +471,7 @@ button {
 
   .panel p {
     text-transform: uppercase;
-    font-family: 'Amatic SC', cursive;
+    font-family: Playfair, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em white;
     font-size: 2vw;
   }
@@ -409,11 +480,13 @@ button {
     font-size: 2vw;
   }
 
-  .panel.open {
+  .panel.openMobile {
     flex:5 0 85%;
     font-size: 2vw;
-    
-
+  }
+  .panel.open {
+    flex:5 ;
+    font-size: 2vw;
   }
 
   .buttonPizza
@@ -607,6 +680,18 @@ button {
         font-size: 2.3vw;
         
     }
+    #cocktail1, #cocktail2, #cocktail3, #cocktail4, #cocktail5
+    {
+        font-size: 3.5vw;
+    }
+    #cocktailIng1, #cocktailIng2, #cocktailIng3, #cocktailIng4, #cocktailIng5{
+        font-size: 2.5vw;
+    }
+
+    #cocktail1Prix,#cocktail2Prix,#cocktail3Prix,#cocktail4Prix,#cocktail5Prix
+    {
+        font-size: 2.3vw;
+    }
 
     #felafel1, #Lahmacum,#felafelPrix,#lahmacunPrix{
     
@@ -626,7 +711,7 @@ button {
 
     .panels
     {
-        width: 100vw;
+        
         height: 70vh;
         
     }
