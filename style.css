@@ -309,6 +309,12 @@ footer{
         position: relative;
         width: 90vw;
     }
+    nav a{
+        font-size:4.5vw
+    }
+    a{
+        font-size: 4.5vw;
+    }
     .container{
         width: 90vw;
         margin-bottom: 2em;
