@@ -4,8 +4,13 @@
  const gridMenus = document.querySelectorAll('.menuContainer');
  const panel= document.querySelectorAll('.panel')
  const aboutLink = document.getElementById('aboutLink')
+ const images = menuPizza.querySelectorAll('.imgPizzaCrème')
+ const tabMenuPizza = document.querySelector('.pizza-tab-display');
+ const sliderPizza = menuPizza.querySelector('.sliderContainer')
+
 let btnCrème = null
 let btnTomate = null
+
 
 gridMenus.forEach(g=> g.style.display="none")
 
@@ -65,20 +70,14 @@ function toggleActive(e)
     {
         this.classList.add('open-active')
 
-        
-        
             if(this.classList.contains('panel1')) 
             {    
-               
-                
                  this.children[0].style.display='none'
                  if(btnCrème === null)
                      createButton(this);
                      
                 this.removeEventListener('click',toggleOpen)
 
-            
-                
             }
                 
             if( this.classList.contains('panel2'))
@@ -102,7 +101,9 @@ function toggleActive(e)
         if( this.classList.contains('panel1'))
         {
             this.children[0].style.display='contents'
-            menuPizza.style.display="none" 
+            menuPizza.style.display="none"
+
+            tabMenuPizza.style.display='none' 
            
         }
 
@@ -125,27 +126,71 @@ function toggleActive(e)
 function afficherMenu(e)
 {
     
-    if(this.innerHTML ==='Base Crème')
-    {
-        deleteButton()
-       
-        menuPizza.style.display="grid" 
-        setTimeout(()=>
-        {
-        panel[0].addEventListener('click',toggleOpen)
-        },500 )
-    }
-    if(this.innerHTML === 'Base Tomate')
-        {
+    
             deleteButton()
-            menuPizza.style.display="grid" 
+            menuPizza.style.display="flex" 
+            tabMenuPizza.style.display='grid'
+            
             setTimeout(()=>
             {
             panel[0].addEventListener('click',toggleOpen)
             },500 )
-        }
+        
+}
 
-   
+function makeSlider(e)
+{
+    deleteButton()
+    menuPizza.style.display="flex" 
+    sliderPizza.style.display='grid'
+    let currentSlide=1
+    const images = sliderPizza.querySelectorAll('img')
+    const slideshow = document.getElementById('slideshow')
+    const pizzaCrèmeIng =[
+        {pizza:"Base tomate/ origan/ olives,poulet, chorizos, viandes hachées, mozzarella, basilic frais"},
+        {pizza:"Sauce tomate, poulet rôti mozzarella, tomates cerises, ananas "},
+        {pizza:"Sauce tomate, poulet rôti mozzarella, tomates cerises, ananas "},
+        {pizza:"Sauce tomate, poulet rôti mozzarella, tomates cerises, ananas "}
+    ]
+    this.disabled=true
+    
+
+        const contenu =document.createElement('p')
+        contenu.innerHTML= images[currentSlide].alt
+        sliderPizza.querySelector('.slider-pizza-tittle').appendChild(contenu)
+    
+    const ingPizza = sliderPizza.querySelector('.Ing-Pizza-Slider')
+    ingPizza.innerHTML='Ingredient: '+ pizzaCrèmeIng[currentSlide-1].pizza
+    pizzaCrèmeIng[1].pizza
+    
+      
+        
+    slideshow.innerHTML = `<img src="${images[currentSlide].src}" alt="${images[currentSlide].alt}">`
+
+    sliderPizza.querySelectorAll('.slideButton').forEach(b=>b.addEventListener('click',()=>{
+            if(b.value ==='>')
+                currentSlide=(currentSlide+1)%images.length
+            else
+                    currentSlide=(currentSlide-1+4)%images.length
+         slideshow.innerHTML = `<img src="${images[currentSlide].src}" alt="${images[currentSlide].alt}">`
+        contenu.innerHTML= images[currentSlide].alt
+        ingPizza.innerHTML='Ingredients: '+ pizzaCrèmeIng[currentSlide-1].pizza
+    }))
+
+    slideshow.addEventListener('click',()=>{
+        
+             panel[0].children[0].style.display='contents'
+            sliderPizza.style.display="none"
+            menuPizza.style.display="none"
+            panel[0].addEventListener('click',toggleOpen)
+            
+    })
+        
+
+}
+function changeslider(e)
+{
+    
 }
 
 function createButton(panelclicked)
@@ -163,15 +208,19 @@ function createButton(panelclicked)
     divButton.classList.add('conteneurButtonPizza')
 
 
-    btnCrème.addEventListener('click',afficherMenu)
+    btnCrème.addEventListener('click',makeSlider)
     btnTomate.addEventListener('click',afficherMenu)
     panelclicked.appendChild(divButton)
     divButton.appendChild(btnTomate)
     divButton.appendChild(btnCrème)
 }
 
+
+
 function deleteButton()
 {
+    while(panel[0].children[2].firstChild)
+        panel[0].children[2].removeChild(panel[0].children[2].lastChild)
     panel[0].removeChild(panel[0].children[2])
     btnCrème = null
     btnTomate =null
