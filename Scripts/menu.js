@@ -267,6 +267,9 @@ function pizzaSelected()
      panel[0].classList.remove('open')
      panel[0].classList.remove('open-active')
      sliderPizza.querySelectorAll('.slideButton').forEach(b=> b.style.visibility='visible')
+   
+    panel.forEach(p=> p.classList.remove('close'))
+
 
      setTimeout(()=>
             {
