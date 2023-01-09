@@ -252,12 +252,15 @@ button {
 }
 .sliderContainer
 {   
-    height: 100%;
-    border-radius: 2%;
-    background-image:linear-gradient(-180deg, black, black);
+    opacity: 0.95;
+    background-image: linear-gradient(-180deg, #FF7E31, #E62C03);
     background-color: white;
+    color: rgb(242, 241, 248);
+    font-size: 2vw;
+    height: 98%;
+    overflow-y: auto;
     grid-template-columns: 100%;
-    grid-template-rows: 25% 45% 30%;
+    grid-template-rows: 25% 45% 25%;
     grid-template-areas: 
         "pizzaTittle"
         "slideShow"
@@ -265,12 +268,19 @@ button {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    
-    
+ 
 }
 .sliderContainer p{
     color: rgb(242, 241, 248);
    
+}
+.slideShow-Display
+{
+    display: flex;
+    align-items: center;
+    gap:.2em;
+    padding: 0.2em;
+
 }
 
 .button-slider-pizza{
@@ -286,7 +296,8 @@ button {
    justify-content: center;
    align-items: center;
     color: rgb(242, 241, 248);
-    font-size: 0.5vw;
+    font-size: 0.5vw;    
+
 }
 .buttonChoiceSlider
 {
@@ -303,7 +314,7 @@ button {
 
 /* CSS */
 .slideButton {
-  padding: 0.6em 2em;
+  padding: 0.6em 1.5em;
   border: none;
   outline: none;
   color: rgb(255, 255, 255);
@@ -311,7 +322,7 @@ button {
   cursor: pointer;
   position: relative;
   z-index: 0;
-  border-radius: 10px;
+  border-radius: 50%;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
@@ -321,15 +332,12 @@ button {
   content: "";
   background: linear-gradient(
     45deg,
-    #ff0000,
-    #ff7300,
-    #fffb00,
-    #48ff00,
-    #00ffd5,
-    #002bff,
-    #7a00ff,
-    #ff00c8,
-    #ff0000
+    #FF7E31, 
+    #eb6a1f,
+    #963e0c,
+    #FF7E31, 
+    #eb6a1f,
+    #963e0c
   );
   position: absolute;
   top: -2px;
@@ -357,33 +365,7 @@ button {
   }
 }
 
-.slideButton:after {
-  z-index: -1;
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #222;
-  left: 0;
-  top: 0;
-  border-radius: 10px;
-}
 
-
-
-.slideButton {
-}
-.slideButton:after {
-  z-index: -1;
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #222;
-  left: 0;
-  top: 0;
-  border-radius: 10px;
-}
 
 
 .slider-pizza-tittle
@@ -404,14 +386,107 @@ border-bottom: 1px solid white;
     align-items: center;
     justify-content: center;
     grid-area: slideShow;
+    flex: 1;
+    height: 40vh;
+    width: 95%;
+    object-position: center;
+   
 }
 #slideshow > img{
-    width: auto;
+    width: 100%;
     overflow: hidden;
-    border-radius: 10%;
-    height: 25vh;
-    
+    height: 100%; 
 }
+
+.pizza-Selected
+{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./Img/photo-mise-en-avant-restaurant-libanais-.jpg");
+  background-size: cover;
+ -o-background-size: cover;
+ background-position: center center;
+ background-attachment: fixed; 
+}
+.pizzaSelected-Container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    bottom: 1em;
+    display: flex;
+    flex: 1;
+    width: 80%;
+    height: 80%;
+    border-radius: 3%;
+    opacity: 0.95;   
+    background-image: linear-gradient(-180deg, #FF7E31, #E62C03);
+
+}
+
+#pizza-Selected-Contact
+{
+    font-size: 3.5vw;
+}
+
+
+.close-return-button
+{
+    position: absolute;
+    display: flex;
+    right: 0;
+    top: 0.2em;
+    justify-content: right;
+    gap: 0.1em;
+    height: 2em;
+}
+.buttonClose
+{
+    background-color: #d4e5cf;
+    background-image: none;
+    color: #161616;
+    border: #111;
+    border: 1px solid #111;
+    padding: 1em;
+    height: 0.75em;
+    line-height: 0.75em;
+}
+.buttonClose:hover
+{
+    background-color: #90c081;
+}
+.pizza-selected-slide-show
+{
+    padding: 3em;
+}
+
+.pizza-Selected:first-child
+{
+  flex: 3;
+  margin-top: 2em;
+  padding: 0.5em;
+}
+.pizza-Selected-Container-Contenu
+{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-bottom: 1em;
+    flex: 1;
+}
+.pizza-Selected-img img{
+    max-height: 40vh;
+    width: 95%;
+}
+.pizza-Selected-img{
+    padding: 1em;
+    flex: 1;
+}
+
 
 .menuCocktail
 {
@@ -432,8 +507,7 @@ border-bottom: 1px solid white;
     "cocktail2 cocktailIng2 cocktail2Prix"
     "cocktail3 cocktailIng3 cocktail3Prix"
     "cocktail4 cocktailIng4 cocktail4Prix"
-    "cocktail5 cocktailIng5 cocktail5Prix"
-    ;
+    "cocktail5 cocktailIng5 cocktail5Prix";
     grid-gap: 0.2rem 1rem;
     margin-top: 0; 
 }
@@ -443,25 +517,18 @@ border-bottom: 1px solid white;
     opacity: 0.85;
     border-radius: 2%;
     background-image:linear-gradient(-180deg, black, black);
-    
     color: rgb(242, 241, 248);
     font-size: 2vw;
     display: grid;
     height: 90%;
     align-content:space-around;
     overflow-x: auto;
-
-
     grid-template-columns: 2fr 3fr 0.5fr;
     grid-template-rows: 0.25fr 0.40fr ;
     grid-template-areas: 
-
     "felafel1 felafel1Ing felafelPrix"
-    "Lahmacum LahmacumIng lahmacunPrix"
-  
-    ;
+    "Lahmacum LahmacumIng lahmacunPrix";
     grid-gap: 0.2rem 1rem;
-
 }
 
 
@@ -586,7 +653,7 @@ border-bottom: 1px solid white;
     color: white;
     text-align: center;
     align-items: center;
-    padding: 0.2em;
+    padding-top: 0.1em;
     flex:1;
     justify-content: center;
     align-items: center;
@@ -599,6 +666,8 @@ border-bottom: 1px solid white;
     background-size: cover;
     background-position: center center;
   }
+
+
 
   .panel1 { 
     background-image:url('./Img/pizza4.jpg');
@@ -640,6 +709,9 @@ border-bottom: 1px solid white;
 .sliderContainer p:hover{
     text-shadow: none;
 }
+.pizza-Selected>p:hover{
+    text-shadow: none;
+}
   
   .panel p:nth-child(2) {
     font-size: 2vw;
@@ -652,7 +724,7 @@ border-bottom: 1px solid white;
   .panel.open {
     flex:5 ;
     font-size: 2vw;
-    padding: 5px;
+   
   }
 
   .buttonPizza
@@ -688,6 +760,7 @@ border-bottom: 1px solid white;
     background-image: linear-gradient(-180deg, #FF7E31, #E62C03);
     
 }
+
 .content{
     display: flex;
     border-top: solid;
@@ -782,7 +855,7 @@ border-bottom: 1px solid white;
     .icon-Img{
       padding-right: 0;
     }
-    Img
+    #icon
     {
         max-width: 50%;
     }
@@ -806,7 +879,15 @@ border-bottom: 1px solid white;
         justify-content: center;
         align-items: center;
     }
-   
+
+    .buttonClose{
+        height: 0.5em;
+        line-height: 0.5em;
+    }
+    .slideButton
+    {
+        padding: 0.4em 1em;
+    }
  
 }
 

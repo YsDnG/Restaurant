@@ -162,11 +162,8 @@ function makeSlider(e)
     const ingPizza = sliderPizza.querySelector('.Ing-Pizza-Slider')
     ingPizza.innerHTML='Ingredient: '+ pizzaCrèmeIng[currentSlide-1].pizza
     pizzaCrèmeIng[1].pizza
-    
-      
-        
-    slideshow.innerHTML = `<img src="${images[currentSlide].src}" alt="${images[currentSlide].alt}">`
 
+    slideshow.innerHTML = `<img src="${images[currentSlide].src}" alt="${images[currentSlide].alt}">`
     sliderPizza.querySelectorAll('.slideButton').forEach(b=>b.addEventListener('click',()=>{
             if(b.value ==='>')
                 currentSlide=(currentSlide+1)%images.length
@@ -177,16 +174,106 @@ function makeSlider(e)
         ingPizza.innerHTML='Ingredients: '+ pizzaCrèmeIng[currentSlide-1].pizza
     }))
 
-    slideshow.addEventListener('click',()=>{
-        
-             panel[0].children[0].style.display='contents'
-            sliderPizza.style.display="none"
-            menuPizza.style.display="none"
-            panel[0].addEventListener('click',toggleOpen)
-            
-    })
-        
+    slideshow.addEventListener('click',pizzaSelected)
 
+}
+
+function pizzaSelected()
+{
+    panel[0].children[1].style.display='none'
+     /* Dom element needed */
+    const navBar = document.querySelector('header')
+    const panels= document.querySelector('.panels')
+    const slideshow = document.createElement('div')
+    slideshow.classList.add('pizza-Selected-img')
+    slideshow.innerHTML=this.innerHTML
+    
+
+    /*Hide navBar & make the the container bigger */
+    navBar.style.display="none"
+    panels.style.height='100vh'
+    panels.style.width='100vw'
+
+
+    /* Hide all panel not needed*/
+    panel.forEach(p => {
+        if(!p.classList.contains('open'))
+            p.style.display='none'
+       })
+
+    /* Create a new Div to display the selected pizza details*/
+    const pizzaSelectedDisplay= document.createElement('div')
+    pizzaSelectedDisplay.classList.add('pizza-Selected')
+    panel[0].appendChild(pizzaSelectedDisplay)
+
+    const contenuContainer = document.createElement('div');
+    contenuContainer.classList.add('pizza-Selected-Container-Contenu')
+    
+    const pizzaSelectedContainer =document.createElement('div');
+    pizzaSelectedContainer.classList.add('pizzaSelected-Container')
+
+    const contenu =document.createElement('p')
+    contenu.innerHTML ="Le sage a dit : « Le pardon est divin, mais ne paie jamais plein tarif pour une pizza en retard »."
+   
+    const contact =document.createElement('p')
+    contact.innerHTML='Pour commander: 04-56-56-56-56'
+    contact.id='pizza-Selected-Contact'
+
+    const buttonCloseDiv = document.createElement('div')
+    buttonCloseDiv.classList.add('close-return-button')
+    btnLeave = document.createElement('button');
+    btnGoBack = document.createElement('button');
+    btnLeave.classList.add('buttonClose')
+    btnGoBack.classList.add('buttonClose')
+    btnLeave.innerHTML='X'
+    btnGoBack.innerHTML='<i class="fa-solid fa-arrow-left">'
+    buttonCloseDiv.appendChild(btnGoBack)
+    buttonCloseDiv.appendChild(btnLeave)
+    pizzaSelectedDisplay.appendChild(buttonCloseDiv)
+    
+
+    contenuContainer.appendChild(contenu)
+    contenuContainer.appendChild(contact)
+    
+    
+    pizzaSelectedContainer.appendChild(slideshow)
+    pizzaSelectedContainer.appendChild(contenuContainer)
+    pizzaSelectedDisplay.appendChild(pizzaSelectedContainer)
+ 
+   sliderPizza.querySelectorAll('.slideButton').forEach(b=> b.style.visibility='hidden')
+
+
+       btnGoBack.addEventListener('click',()=>{
+        navBar.style.display="flex"
+        panels.style.height='80vh'
+        panels.style.width='80vw'
+        panel[0].lastChild.remove()
+        sliderPizza.querySelectorAll('.slideButton').forEach(b=> b.style.visibility='visible')
+        panel[0].children[1].style.display='grid'
+
+       })
+
+
+
+   /* Button close */
+   btnLeave.addEventListener('click',() => {
+    navBar.style.display="flex"
+    panels.style.height='80vh'
+    panels.style.width='80vw'
+    panel.forEach(p => {
+            p.style.display='flex'
+       })
+     panel[0].lastChild.remove()
+     panel[0].classList.remove('open')
+     panel[0].classList.remove('open-active')
+     sliderPizza.querySelectorAll('.slideButton').forEach(b=> b.style.visibility='visible')
+
+     setTimeout(()=>
+            {
+            panel[0].addEventListener('click',toggleOpen)
+            },500 )
+})
+   
 }
 function changeslider(e)
 {
