@@ -799,10 +799,12 @@ button {
     flex: 1;
     opacity: 0.90;
     font-family: Playfair, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    text-transform: uppercase;
-    font-size: 2vw;
+   
+    font-size: 2.5vw;
     background-image: none;
-    text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em white;
+    text-shadow: 5px 5px 25px#000116, 0 0 1em #000116, 0 0 0.2em rgb(0, 0, 0);
+    
+    font-weight: 800;
     
   }
   .conteneurButtonPizza{
@@ -1027,11 +1029,11 @@ button {
     }
     .panel p{
         
-        font-size: 3.5vw;
+        font-size: 4vw;
     }
     
     .buttonPizza{
-        font-size: 2.8vw;
+        font-size: 4vw;
     }
 
    .contact h3 a{
