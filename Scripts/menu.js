@@ -251,7 +251,15 @@ function pizzaSelected()
         panel[0].lastChild.remove()
         panel.forEach(p=> p.classList.remove('close'))
         sliderPizza.querySelectorAll('.slideButton').forEach(b=> b.style.visibility='visible')
-        panel.forEach(p => p.style.display='flex')
+        if (window.innerWidth > 500)
+            panel.forEach(p => p.style.display='flex')
+        else
+        {
+            btnLeave.classList.add('buttonCloseMobile')
+        }
+            
+
+        
                 
         panel[0].children[1].style.display='flex'
 
