@@ -1057,6 +1057,7 @@ button {
     }
     .slideButton{
         padding: 0 1.75em;
+        opacity: 0.80;
     }
 
    
