@@ -155,7 +155,7 @@ function makeSlider(e)
     this.disabled=true
     
 
-        const contenu =document.createElement('p')
+        const contenu =document.createElement('h2')
         contenu.innerHTML= images[currentSlide].alt
         sliderPizza.querySelector('.slider-pizza-tittle').appendChild(contenu)
     
@@ -180,6 +180,7 @@ function makeSlider(e)
 
 function pizzaSelected()
 {
+   
     panel[0].children[1].style.display='none'
      /* Dom element needed */
     const navBar = document.querySelector('header')
@@ -192,7 +193,7 @@ function pizzaSelected()
     /*Hide navBar & make the the container bigger */
     navBar.style.display="none"
     panels.style.height='100vh'
-    panels.style.width='100vw'
+    panels.style.width='90vw'
 
 
     /* Hide all panel not needed*/
@@ -212,10 +213,10 @@ function pizzaSelected()
     const pizzaSelectedContainer =document.createElement('div');
     pizzaSelectedContainer.classList.add('pizzaSelected-Container')
 
-    const contenu =document.createElement('p')
+    const contenu =document.createElement('h2')
     contenu.innerHTML ="Le sage a dit : « Le pardon est divin, mais ne paie jamais plein tarif pour une pizza en retard »."
    
-    const contact =document.createElement('p')
+    const contact =document.createElement('h2')
     contact.innerHTML='Pour commander: 04-56-56-56-56'
     contact.id='pizza-Selected-Contact'
 
@@ -229,7 +230,7 @@ function pizzaSelected()
     btnGoBack.innerHTML='<i class="fa-solid fa-arrow-left">'
     buttonCloseDiv.appendChild(btnGoBack)
     buttonCloseDiv.appendChild(btnLeave)
-    pizzaSelectedDisplay.appendChild(buttonCloseDiv)
+    pizzaSelectedContainer.appendChild(buttonCloseDiv)
     
 
     contenuContainer.appendChild(contenu)
@@ -248,8 +249,11 @@ function pizzaSelected()
         panels.style.height='80vh'
         panels.style.width='80vw'
         panel[0].lastChild.remove()
+        panel.forEach(p=> p.classList.remove('close'))
         sliderPizza.querySelectorAll('.slideButton').forEach(b=> b.style.visibility='visible')
-        panel[0].children[1].style.display='grid'
+        panel.forEach(p => p.style.display='flex')
+                
+        panel[0].children[1].style.display='flex'
 
        })
 
