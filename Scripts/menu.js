@@ -101,10 +101,7 @@ function toggleActive(e)
         if( this.classList.contains('panel1'))
         {
             this.children[0].style.display='contents'
-            menuPizza.style.display="none"
-
-            tabMenuPizza.style.display='none' 
-           
+            menuPizza.style.display="none"  
         }
 
         if( this.classList.contains('panel2'))
@@ -156,8 +153,14 @@ function makeSlider(e)
     
 
         const contenu =document.createElement('h2')
+        btnLeave = document.createElement('button');
+        btnLeave.classList.add('buttonClose')
+        btnLeave.innerHTML='X'
+   
         contenu.innerHTML= images[currentSlide].alt
         sliderPizza.querySelector('.slider-pizza-tittle').appendChild(contenu)
+        sliderPizza.querySelector('.slider-pizza-tittle').appendChild(btnLeave)
+    
     
     const ingPizza = sliderPizza.querySelector('.Ing-Pizza-Slider')
     ingPizza.innerHTML='Ingredient: '+ pizzaCrèmeIng[currentSlide-1].pizza
@@ -173,6 +176,23 @@ function makeSlider(e)
         contenu.innerHTML= images[currentSlide].alt
         ingPizza.innerHTML='Ingredients: '+ pizzaCrèmeIng[currentSlide-1].pizza
     }))
+
+    /* Buton close  */
+    btnLeave.addEventListener('click',() => {
+     
+        panel.forEach(p => {
+                p.style.display='flex'
+           })
+         panel[0].lastChild.display='none'
+         panel[0].classList.remove('open')
+         panel[0].classList.remove('open-active')
+        panel.forEach(p=> p.classList.remove('close'))
+    
+         setTimeout(()=>
+                {
+                panel[0].addEventListener('click',toggleOpen)
+                },500 )
+    })
 
     slideshow.addEventListener('click',pizzaSelected)
 
@@ -257,13 +277,6 @@ function pizzaSelected()
         sliderPizza.querySelectorAll('.slideButton').forEach(b=> b.style.visibility='visible')
         if (window.innerWidth > 500)
             panel.forEach(p => p.style.display='flex')
-        else
-        {
-            btnLeave.classList.add('buttonCloseMobile')
-        }
-            
-
-        
                 
         panel[0].children[1].style.display='flex'
 

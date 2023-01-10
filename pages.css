@@ -283,8 +283,7 @@ button {
     justify-content: center;
     align-items: center;
     grid-area: pizzaTittle ;
-   
-    
+    gap: 1em;
 }
 .slider-pizza-tittle h2
 {
@@ -1053,6 +1052,9 @@ button {
     }
     .pizza-Selected h2
     {
+        font-size: 4.5vmin;
+    }
+    .slider-pizza-tittle{
         font-size: 3.5vmin;
     }
     .slideButton{
