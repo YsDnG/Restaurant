@@ -1055,6 +1055,9 @@ button {
     {
         font-size: 3.5vmin;
     }
+    .slideButton{
+        padding: 0 1.75em;
+    }
 
    
  

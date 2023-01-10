@@ -324,7 +324,7 @@ function createButton(panelclicked)
 
 
     btnCrème.addEventListener('click',makeSlider)
-    btnTomate.addEventListener('click',afficherMenu)
+    btnTomate.addEventListener('click',makeSlider)
     panelclicked.appendChild(divButton)
     divButton.appendChild(btnTomate)
     divButton.appendChild(btnCrème)
