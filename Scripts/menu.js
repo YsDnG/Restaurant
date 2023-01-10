@@ -247,7 +247,11 @@ function pizzaSelected()
        btnGoBack.addEventListener('click',()=>{
         navBar.style.display="flex"
         panels.style.height='80vh'
-        panels.style.width='80vw'
+        if (window.innerWidth < 500)
+            panels.style.width='100vw'
+        else
+            panels.style.width='80vw'
+
         panel[0].lastChild.remove()
         panel.forEach(p=> p.classList.remove('close'))
         sliderPizza.querySelectorAll('.slideButton').forEach(b=> b.style.visibility='visible')
@@ -270,8 +274,15 @@ function pizzaSelected()
    /* Button close */
    btnLeave.addEventListener('click',() => {
     navBar.style.display="flex"
+
+    if (window.innerWidth < 500)
+            panels.style.width='100vw'
+        else
+            panels.style.width='80vw'
+
     panels.style.height='80vh'
-    panels.style.width='80vw'
+    
+
     panel.forEach(p => {
             p.style.display='flex'
        })
@@ -281,6 +292,8 @@ function pizzaSelected()
      sliderPizza.querySelectorAll('.slideButton').forEach(b=> b.style.visibility='visible')
    
     panel.forEach(p=> p.classList.remove('close'))
+
+    document.querySelector('.sliderContainer').style.display='none'
 
 
      setTimeout(()=>
