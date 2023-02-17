@@ -217,6 +217,18 @@ function pizzaSelected()
 
 
     /* Hide all panel not needed*/
+    panel.forEach(p=> {
+        if(p.classList.contains('open')&& p != panel[0])
+        {
+            p.classList.remove('open')
+            this.classList.remove('open-active')
+            p.children[0].style.display='contents'
+            p.children[1].style.display="none"  
+        
+            
+        }
+            
+    })
     panel.forEach(p => {
         if(!p.classList.contains('open'))
             p.style.display='none'

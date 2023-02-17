@@ -292,6 +292,7 @@ button {
     box-shadow: 0 5px 10px rgb(1 1 1 /5%);
     padding: 10px;
     border-radius: 10px;
+    font-size: 2.5vw;
 
 }
 .slideShow-Display
@@ -355,7 +356,7 @@ button {
 
 
 .slideButton {
- padding: 0 0.75em;
+ padding: 0 1.5em;
   border: none;
   outline: none;
   color: rgb(167, 208, 221);
@@ -776,7 +777,8 @@ button {
   .sliderContainer p {
     text-transform: none;
     text-shadow: none;
-}
+    font-size: 2vw;
+    }
 .sliderContainer p:hover{
     text-shadow: none;
 }
